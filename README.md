@@ -3,9 +3,7 @@
 ## Generative Adversarial Networks for Image-to-Image Translation on Multi-Contrast MR Images - A Comparison of CycleGAN and UNIT  
 
 ### Article  
-[Frontiers in Neuroinformatics - article](https://www.frontiersin.org/journals/neuroinformatics)
-
-[(Underlying thesis project - report)](http://liu.diva-portal.org/smash/record.jsf?dswid=-7667&aq2=%5B%5B%5D%5D&af=%5B%5D&searchType=SIMPLE&sortOrder2=title_sort_asc&language=en&pid=diva2%3A1216606&aq=%5B%5B%5D%5D&sf=all&aqe=%5B%5D&sortOrder=author_sort_asc&onlyFullText=false&noOfRows=50&dspwid=-7667)  
+[Frontiers in Neuroinformatics - article](https://www.frontiersin.org/journals/neuroinformatics) 
 &nbsp;
 &nbsp;
 &nbsp;
