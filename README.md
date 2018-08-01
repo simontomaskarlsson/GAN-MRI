@@ -3,10 +3,11 @@
 ## Generative Adversarial Networks for Image-to-Image Translation on Multi-Contrast MR Images - A Comparison of CycleGAN and UNIT  
 
 ### [[Frontiers in Neuroinformatics - article]](https://www.frontiersin.org/journals/neuroinformatics) [[Arxiv paper]](https://arxiv.org/abs/1806.07777)  
-  
+
 
 ### Code usage  
-1. Prepare your dataset under the directory 'data' in the CycleGAN or UNIT folder
+1. Prepare your dataset under the directory 'data' in the CycleGAN or UNIT folder and
+set dataset name to parameter 'image_folder' in model init function.
   * Directory structure on new dataset needed for training and testing:
     * data/Dataset-name/trainA
     * data/Dataset-name/trainB
