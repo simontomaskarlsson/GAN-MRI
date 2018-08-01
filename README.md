@@ -24,8 +24,8 @@ python UNIT.py
 ```  
 
 3. Generate synthetic images by following specifications under:
-  * CycleGAN/generate_images/ReadMe.rtf
-  * UNIT/generate_images/ReadMe.rtf  
+  * CycleGAN/generate_images/ReadMe.md
+  * UNIT/generate_images/ReadMe.md
 
 ### Result GIFs - 304x256 pixel images  
 **Left:** Input image. **Middle:** Synthetic images generated during training. **Right:** Ground truth.  
