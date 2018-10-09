@@ -340,7 +340,7 @@ class CycleGAN():
             x = self.dk(x, 256)
 
         # Layer 4-12: Residual layer
-        for _ in range(4, 12):
+        for _ in range(4, 13):
             x = self.Rk(x)
 
         if self.use_multiscale_discriminator:
