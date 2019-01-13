@@ -468,10 +468,11 @@ class UNIT():
         epoch_list = []
         loop_index_list = []
 
-        dummy = []
-        dummy = shape=self.latent_dim
-        dummy = np.zeros(shape=self.latent_dim)
-        dummy = np.expand_dims(dummy, 0)
+        #dummy = []
+        #dummy = shape=self.latent_dim
+        #dummy = np.zeros(shape=self.latent_dim)
+        #dummy = np.expand_dims(dummy, 0)
+        dummy = np.zeros(shape = ((self.batch_size,) + self.latent_dim))
 
         self.writeMetaDataToJSON()
         self.saveImages('init', 1)
