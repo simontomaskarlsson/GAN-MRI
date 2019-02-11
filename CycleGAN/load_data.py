@@ -58,11 +58,11 @@ def create_image_array(image_list, image_path, nr_of_channels):
             image_array.append(image)
 
     return np.array(image_array)
-
-
+  
+  
+  # If using 16 bit depth images, use the formula 'array = array / 32767.5 - 1' instead
 def normalize_array(array):
-    max_value = max(array.flatten())
-    array = array / max_value
+    array = array / 127.5 - 1
     return array
 
 
