@@ -321,7 +321,7 @@ class CycleGAN():
         else:
             x = Flatten()(x)
             x = Dense(1)(x)
-        x = Activation('sigmoid')(x)
+        #x = Activation('sigmoid')(x) - No sigmoid to avoid near-fp32 machine epsilon discriminator cost
         return Model(inputs=input_img, outputs=x, name=name)
 
     def modelGenerator(self, name=None):
