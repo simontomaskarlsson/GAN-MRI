@@ -582,12 +582,12 @@ class CycleGAN():
                         # randomly pick from this domain
                         if len(A_train) <= len(B_train):
                             indexes_A = np.random.randint(len(A_train), size=batch_size)
-                            indexes_B = random_order_B[loop_index:
-                                                       loop_index + batch_size]
+                            indexes_B = random_order_B[min_nr_imgs - batch_size:
+                                                       min_nr_imgs]
                         else:
                             indexes_B = np.random.randint(len(B_train), size=batch_size)
-                            indexes_A = random_order_A[loop_index:
-                                                       loop_index + batch_size]
+                            indexes_A = random_order_A[min_nr_imgs - batch_size:
+                                                       min_nr_imgs]
                     else:
                         indexes_A = random_order_A[loop_index:
                                                    loop_index + batch_size]
