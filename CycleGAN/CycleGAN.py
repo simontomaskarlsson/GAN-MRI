@@ -582,12 +582,26 @@ class CycleGAN():
                         # randomly pick from this domain
                         if len(A_train) <= len(B_train):
                             indexes_A = np.random.randint(len(A_train), size=batch_size)
-                            indexes_B = random_order_B[min_nr_imgs - batch_size:
-                                                       min_nr_imgs]
-                        else:
+
+                            # if all images are used for the other domain
+                            if loop_index + batch_size >= epoch_iterations:  
+                                indexes_B = random_order_B[epoch_iterations-batch_size: 
+                                                           epoch_iterations]
+                            else: # if not used, continue iterating...
+                                indexes_B = random_order_B[loop_index:
+                                                           loop_index + batch_size]
+
+                        else: # if len(B_train) <= len(A_train)
                             indexes_B = np.random.randint(len(B_train), size=batch_size)
-                            indexes_A = random_order_A[min_nr_imgs - batch_size:
-                                                       min_nr_imgs]
+                            
+                             # if all images are used for the other domain
+                            if loop_index + batch_size >= epoch_iterations:  
+                                indexes_A = random_order_A[epoch_iterations-batch_size: 
+                                                           epoch_iterations]
+                            else: # if not used, continue iterating...
+                                indexes_A = random_order_A[loop_index:
+                                                           loop_index + batch_size]
+
                     else:
                         indexes_A = random_order_A[loop_index:
                                                    loop_index + batch_size]
