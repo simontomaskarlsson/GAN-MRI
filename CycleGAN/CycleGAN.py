@@ -245,8 +245,8 @@ class CycleGAN():
 #===============================================================================
 # Architecture functions
 
-    def ck(self, x, k, use_normalization):
-        x = Conv2D(filters=k, kernel_size=4, strides=2, padding='same')(x)
+    def ck(self, x, k, use_normalization, stride):
+        x = Conv2D(filters=k, kernel_size=4, strides=stride, padding='same')(x)
         # Normalization is not done on the first discriminator layer
         if use_normalization:
             x = self.normalization(axis=3, center=True, epsilon=1e-5)(x, training=True)
@@ -308,13 +308,13 @@ class CycleGAN():
         # Specify input
         input_img = Input(shape=self.img_shape)
         # Layer 1 (#Instance normalization is not used for this layer)
-        x = self.ck(input_img, 64, False)
+        x = self.ck(input_img, 64, False, 2)
         # Layer 2
-        x = self.ck(x, 128, True)
+        x = self.ck(x, 128, True, 2)
         # Layer 3
-        x = self.ck(x, 256, True)
+        x = self.ck(x, 256, True, 2)
         # Layer 4
-        x = self.ck(x, 512, True)
+        x = self.ck(x, 512, True, 1)
         # Output layer
         if self.use_patchgan:
             x = Conv2D(filters=1, kernel_size=4, strides=1, padding='same')(x)
